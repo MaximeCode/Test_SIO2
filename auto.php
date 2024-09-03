@@ -51,6 +51,12 @@ class Auto
         $this->$dateMEC = $value;
     }
 
+    /**
+     * Show immat, puissance, date de mise en circulation
+     *
+     * @return void
+     */
+
     public function afficheDetails() {
         echo "
         <li>Immatriculation : $this->immat</li>

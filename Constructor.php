@@ -25,6 +25,12 @@ class Constructor
         return $this->img;
     }
 
+    /**
+     * Récup toutes les voitures du constructeur
+     *
+     * @return array
+     */
+
     public function getAutos(): array {
         return $this->autos;
     }
