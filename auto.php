@@ -6,10 +6,14 @@ class Auto
     private int $chevaux;
     private int $dateMEC; // Date de mise en circulation
 
-    public function __construct(string $immat, int $chevaux, int $dateMEC) {
+    private Constructor $constructor;
+
+    public function __construct(string $immat, int $chevaux, int $dateMEC, Constructor $constructor)
+    {
         $this->immat = $immat;
         $this->chevaux = $chevaux;
         $this->dateMEC = $dateMEC;
+        $this->constructor = $constructor;
     }
 
     public function getImmat(string $immat)
@@ -37,7 +41,8 @@ class Auto
      * @return mixed
      */
 
-    public function getDateMEC(string $dateMEC) {
+    public function getDateMEC(string $dateMEC)
+    {
         return $this->$dateMEC;
     }
 
@@ -52,17 +57,32 @@ class Auto
     }
 
     /**
+     * @return Constructor
+     */
+    public function getConstructor(): Constructor
+    {
+        return $this->constructor;
+    }
+
+    /**
+     * @param Constructor $constructor
+     */
+    public function setConstructor(Constructor $constructor): void
+    {
+        $this->constructor = $constructor;
+    }
+
+    /**
      * Show immat, puissance, date de mise en circulation
      *
      * @return void
      */
 
-    public function afficheDetails() {
+    public function afficheDetails()
+    {
         echo "
-        <li>Immatriculation : $this->immat</li>
-        <li>Puissance : $this->chevaux</li>
-        <li>Date de mise en circulation : $this->dateMEC</li>";
+        Immatriculation : $this->immat<br>
+        Puissance : $this->chevaux<br>
+        Date de mise en circulation : $this->dateMEC";
     }
-
-
 }
